@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MPSample</string>
+    <string name="amount">$ Amount</string>
+    <string name="pay">Pagar</string>
+</resources>

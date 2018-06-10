@@ -1,0 +1,57 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.2.41'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+ext {
+    archLifecycleVersion = "1.1.0"
+    daggerVersion = "2.15"
+    glideVersion = "4.7.1"
+    buildToolsVersion = "25.0.3"
+    supportLibVersion = "27.1.1"
+    daggerVersion = "2.15"
+    retrofitVersion = "2.2.0"
+    archLifecycleVersion = "1.1.1"
+    archRoomVersion = "1.0.0"
+    espressoVersion = "2.2.2"
+    jUnitVersion = "4.12"
+    firebaseGmsVersion = "16.0.0"
+    firebaseAuthVersion = "16.0.1"
+
+    materialDialogVersion = "0.9.6.0"
+    interceptorVersion = "3.6.0"
+    telegramGalleryVersion = "1.0.1"
+    pagerIndicatorVersion = "1.0.0"
+    mapUtilsVersion = "0.4"
+    intercomVersion = "4.0.5"
+    butterKnifeVersion = "8.8.1"
+    instaDotVersion = "1.1"
+    multidexVersion = "1.0.3"
+    leakCanaryVersion = "1.5.4"
+    rxAndroidVersion = "2.0.1"
+    rxJavaVersion = "2.1.5"
+    rxBindingVersion = "0.3.0"
+    archCoreTestingVersion = "1.1.1"
+}
