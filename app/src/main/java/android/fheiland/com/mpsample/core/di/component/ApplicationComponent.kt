@@ -1,6 +1,6 @@
 package android.fheiland.com.mpsample.core.di.component
 
-import android.fheiland.com.mpsample.ApplicationController
+import android.fheiland.com.mpsample.base.ApplicationController
 import android.fheiland.com.mpsample.core.di.module.ApplicationModule
 import android.fheiland.com.mpsample.core.di.module.BuildersModule
 import dagger.BindsInstance

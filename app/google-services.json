@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "512729427178",
+    "firebase_url": "https://mpsample-a90ae.firebaseio.com",
+    "project_id": "mpsample-a90ae",
+    "storage_bucket": "mpsample-a90ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512729427178:android:d2a9b90bf77915fe",
+        "android_client_info": {
+          "package_name": "android.fheiland.com.mpsample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512729427178-nj41stbujhp3hjo7fes90vgm5m252785.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "512729427178-nj41stbujhp3hjo7fes90vgm5m252785.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk4_jZq-2jDb6xfQZvjORr6UD1KFWpdJM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

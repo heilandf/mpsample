@@ -1,9 +1,14 @@
 package android.fheiland.com.mpsample.core.di.module
 
 import android.content.Context
-import android.fheiland.com.mpsample.ApplicationController
+import android.fheiland.com.mpsample.base.ApplicationController
 import android.fheiland.com.mpsample.BuildConfig
+import android.fheiland.com.mpsample.payment.installments.interactor.InstallmentsUseCase
+import android.fheiland.com.mpsample.payment.installments.interactor.OutputStorageUseCase
+import android.fheiland.com.mpsample.payment.issuers.interactor.CardIssuerListUseCase
+import android.fheiland.com.mpsample.payment.methods.interactor.PaymentMethodListUseCase
 import android.fheiland.com.mpsample.payment.repository.PaymentRepository
+import android.fheiland.com.mpsample.payment.repository.StorageRepository
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -21,10 +26,9 @@ import javax.inject.Singleton
 class ApplicationModule {
 
     @Provides
-    fun providesApplicationContext() : Context? {
-        return ApplicationController.appControllerInstance?.applicationContext
+    fun providesApplicationContext() : Context {
+        return ApplicationController.appControllerInstance.applicationContext
     }
-
 
     @Provides
     @Singleton
@@ -51,5 +55,31 @@ class ApplicationModule {
     @Provides
     fun providesPaymentRepository(retrofit: Retrofit) : PaymentRepository {
         return PaymentRepository(retrofit)
+    }
+
+    @Singleton
+    @Provides
+    fun provideStorageRepository() : StorageRepository {
+        return StorageRepository()
+    }
+
+    @Provides
+    fun provideCardIssuerListUseCase(paymentRepository: PaymentRepository) : CardIssuerListUseCase {
+        return CardIssuerListUseCase(paymentRepository)
+    }
+
+    @Provides
+    fun providePaymentMethodUseCase(paymentRepository: PaymentRepository) : PaymentMethodListUseCase {
+        return PaymentMethodListUseCase(paymentRepository)
+    }
+
+    @Provides
+    fun provideInstallmentUseCase(paymentRepository: PaymentRepository) : InstallmentsUseCase {
+        return InstallmentsUseCase(paymentRepository)
+    }
+
+    @Provides
+    fun provideOutputStorageUseCase(storageRepository: StorageRepository) : OutputStorageUseCase {
+        return OutputStorageUseCase(storageRepository)
     }
 }

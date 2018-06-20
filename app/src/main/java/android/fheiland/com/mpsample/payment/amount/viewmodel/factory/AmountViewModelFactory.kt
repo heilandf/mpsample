@@ -1,3 +1,5 @@
+@file:Suppress("UNCHECKED_CAST")
+
 package android.fheiland.com.mpsample.payment.amount.viewmodel.factory
 
 import android.arch.lifecycle.ViewModel

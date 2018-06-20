@@ -1,6 +1,6 @@
 package android.fheiland.com.mpsample.payment.methods.view
 
-import android.fheiland.com.mpsample.ContainerActivity
+import android.fheiland.com.mpsample.base.ContainerActivity
 import android.os.Bundle
 
 /**
@@ -10,6 +10,8 @@ import android.os.Bundle
 class MethodsActivity : ContainerActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        startFragmentTransaction(MethodsFragment())
+        title = "Payment Methods"
+        if (savedInstanceState == null)
+            startFragmentTransaction(MethodsFragment())
     }
 }

@@ -1,4 +1,4 @@
-package android.fheiland.com.mpsample
+package android.fheiland.com.mpsample.base
 
 import android.app.Activity
 import android.app.Application
@@ -39,6 +39,6 @@ class ApplicationController : Application(), HasActivityInjector {
     }
 
     companion object {
-        var appControllerInstance: ApplicationController? = null
+        lateinit var appControllerInstance: ApplicationController
     }
 }

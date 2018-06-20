@@ -18,11 +18,9 @@ class AmountViewModel : ViewModel() {
     var normalSizeText = MutableLiveData<Boolean>()
     var maxSizeText = MutableLiveData<Boolean>()
 
-    init {
-        moveForwardButtonEnabled.postValue(false)
-    }
+    init { moveForwardButtonEnabled.postValue(false) }
 
-    fun moveForward() = moveForward.postValue(true)
+    fun moveForward(ableToMoveOn: Boolean) = moveForward.postValue(ableToMoveOn)
 
     fun saveInputAmount(amount: String) {
         userAmountInput = amount

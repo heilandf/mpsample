@@ -1,6 +1,6 @@
-package android.fheiland.com.mpsample
+package android.fheiland.com.mpsample.base
 
-import android.fheiland.com.mpsample.payment.amount.view.AmountFragment
+import android.fheiland.com.mpsample.R
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity

@@ -3,7 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".main.MainActivity">
+
+    <include layout="@layout/empty_state_list"
+        android:id="@+id/emptyState"
+
+        android:visibility="gone"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

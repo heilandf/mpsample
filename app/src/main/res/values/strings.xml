@@ -2,4 +2,7 @@
     <string name="app_name">MPSample</string>
     <string name="amount">$ Amount</string>
     <string name="pay">Pagar</string>
+    <string name="empty_state_text">No items available. Im sorry.</string>
+    <string name="no_payments_hint">No payments yet. Start adding one.</string>
+    <string name="formatted_name">%1$s - %2$s</string>
 </resources>

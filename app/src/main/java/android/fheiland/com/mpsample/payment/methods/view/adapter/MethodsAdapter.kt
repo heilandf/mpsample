@@ -1,8 +1,6 @@
 package android.fheiland.com.mpsample.payment.methods.view.adapter
 
 import android.fheiland.com.mpsample.R
-import android.fheiland.com.mpsample.R.id.itemImage
-import android.fheiland.com.mpsample.R.id.itemName
 import android.fheiland.com.mpsample.payment.methods.model.PaymentMethod
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -17,7 +15,7 @@ import kotlinx.android.synthetic.main.method_item.view.*
  * Created by Federico Heiland - Quadion Technologies
  * 12/06/2018
  */
-class MethodsAdapter : RecyclerView.Adapter<MethodsAdapter.ViewHolder>() {
+class MethodsAdapter(private val listener: FragmentBridge) : RecyclerView.Adapter<MethodsAdapter.ViewHolder>() {
 
     var methodList: MutableList<PaymentMethod>? = null
 
@@ -25,7 +23,7 @@ class MethodsAdapter : RecyclerView.Adapter<MethodsAdapter.ViewHolder>() {
     override fun getItemCount(): Int = methodList?.count() ?: 0
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var method = methodList?.get(position)
+        val method = methodList?.get(position)
 
         method?.apply {
             holder.methodName.text = methodName
@@ -33,12 +31,17 @@ class MethodsAdapter : RecyclerView.Adapter<MethodsAdapter.ViewHolder>() {
                     .load(imageUrl)
                     .into(holder.methodImage)
         }
-    }
 
+        holder.itemView.setOnClickListener({ listener.onItemClick(method) })
+    }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val methodName: TextView = view.itemName
         val methodImage: ImageView = view.itemImage
+    }
+
+    interface FragmentBridge {
+        fun onItemClick(method: PaymentMethod?)
     }
 
 }
